@@ -77,7 +77,7 @@ The main demo:
 
 ### Additional feature checks
 
-These are short supporting demos, not separate projects.
+These are short supporting checks that highlight extra DuckDB features.
 
 Remote Parquet over HTTPS:
 

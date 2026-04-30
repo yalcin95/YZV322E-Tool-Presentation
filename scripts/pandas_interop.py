@@ -11,12 +11,13 @@ category:
 2. Vectorized execution: the same aggregation is timed in Pandas and in
    DuckDB on the same in-memory data, so the speedup is apples-to-apples.
 
-Run with the project virtual environment:
+Run through Docker Compose:
 
-    .venv/bin/python scripts/pandas_interop.py
+    docker-compose run --rm pandas-bench
 
-or any Python where ``duckdb``, ``pandas``, and ``pyarrow`` are installed
-(see ``requirements.txt``).
+The Docker image installs ``duckdb``, ``pandas``, and ``pyarrow`` from
+``requirements.txt``. If those packages are installed locally, the script can
+also be run directly with Python.
 """
 
 from __future__ import annotations
