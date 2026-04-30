@@ -1,23 +1,7 @@
-"""
-scripts/pandas_interop.py
+"""Compare one Pandas GROUP BY with the same query through DuckDB.
 
-Demonstrates two DuckDB features that matter for the Python ETL course
-category:
-
-1. Zero-copy interop: DuckDB can run SQL against an existing Pandas
-   DataFrame without copying the data. The DataFrame variable name
-   (``df``) is referenced directly inside the SQL string.
-
-2. Vectorized execution: the same aggregation is timed in Pandas and in
-   DuckDB on the same in-memory data, so the speedup is apples-to-apples.
-
-Run through Docker Compose:
-
+Run:
     docker-compose run --rm pandas-bench
-
-The Docker image installs ``duckdb``, ``pandas``, and ``pyarrow`` from
-``requirements.txt``. If those packages are installed locally, the script can
-also be run directly with Python.
 """
 
 from __future__ import annotations
@@ -49,7 +33,7 @@ def time_pandas(df: pd.DataFrame) -> tuple[pd.DataFrame, float]:
 
 
 def time_duckdb(df: pd.DataFrame) -> tuple[pd.DataFrame, float]:
-    # DuckDB sees the local variable `df` as if it were a table. No copy.
+    # DuckDB can query the DataFrame variable directly.
     start = time.perf_counter()
     result = duckdb.sql(
         """

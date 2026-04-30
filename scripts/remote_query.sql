@@ -1,14 +1,8 @@
 -- scripts/remote_query.sql
--- Demonstrates a feature unique to DuckDB among the course tools:
--- query a remote Parquet file directly over HTTPS without downloading it first.
+-- Query the February 2024 taxi Parquet file without downloading it first.
 --
--- The httpfs extension lets DuckDB read files served over HTTP/S3 as if they
--- were local. Combined with Parquet's columnar layout, DuckDB only fetches
--- the byte ranges needed for the query.
---
--- Run with the official Docker image:
---   docker run --rm -i -v "$(pwd):/workspace" -w /workspace \
---     duckdb/duckdb /duckdb < scripts/remote_query.sql
+-- Run:
+--   docker-compose run --rm remote-demo
 
 INSTALL httpfs;
 LOAD httpfs;
