@@ -1,0 +1,43 @@
+DuckDB version: 1.5.2
+Dataset: NYC TLC Yellow Taxi Trip Records - January 2024
+
+Raw data quality profile
+ raw_rows  valid_rows  removed_rows  removed_pct  outside_january_rows  non_positive_distance_rows  non_positive_fare_rows  non_positive_total_rows
+  2964624     2869697         94927         3.20                    18                       60371                   38341                    35920
+
+Dataset profile
+ total_rows  avg_trip_miles  total_amount_usd
+    2869697            3.73       78481619.24
+
+Payment summary
+payment_method   trips  total_amount_usd  avg_amount_usd
+   Credit card 2298380       64528576.59           28.08
+          Cash  422747       10088948.58           23.87
+         Other  115249        3056745.60           26.52
+       Dispute   22759         571936.35           25.13
+     No charge   10562         235412.12           22.29
+
+Busiest pickup hours
+ pickup_hour  trips  avg_trip_miles  total_amount_usd
+          18 206266            2.86        5538667.02
+          17 200289            3.06        5639741.10
+          16 184956            3.40        5504239.42
+          15 183980            3.96        5042377.92
+          19 178791            3.16        4947536.86
+          14 178011            3.66        4924444.70
+          13 165334            3.16        4382736.59
+          12 159896            3.35        4114476.70
+
+Top pickup zones by total amount
+  borough                  pickup_zone  trips  total_amount_usd  avg_trip_miles
+   Queens                  JFK Airport 138450       11198256.16           15.94
+   Queens            LaGuardia Airport  87694        5820788.27            9.71
+Manhattan               Midtown Center 140140        3357268.70            2.60
+Manhattan        Upper East Side South 140120        2772039.65            1.72
+Manhattan    Times Sq/Theatre District 102958        2766396.27            2.97
+Manhattan        Upper East Side North 133961        2714041.21            1.87
+Manhattan Penn Station/Madison Sq West 102152        2462572.23            2.30
+Manhattan                 Midtown East 104345        2434416.56            2.26
+
+Created outputs/nyc_taxi_demo.duckdb
+Created outputs/top_pickup_zones.parquet

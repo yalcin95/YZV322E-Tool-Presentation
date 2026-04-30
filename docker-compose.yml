@@ -1,0 +1,48 @@
+# docker-compose.yml
+#
+# Compose is used here as a TASK RUNNER, not as a service orchestrator.
+# Each service describes a one-shot demo invocation. Run them with
+# `docker-compose run --rm <service>` so the container starts, executes,
+# and exits. DuckDB itself is still embedded — nothing stays running.
+#
+# Three demo beats:
+#   1. main-demo      Local Parquet + CSV pipeline -> .duckdb + Parquet output
+#   2. remote-demo    Remote Parquet over HTTPS via the httpfs extension
+#   3. pandas-bench   Pandas vs DuckDB GROUP BY benchmark on the same DataFrame
+
+services:
+  main-demo:
+    image: duckdb/duckdb
+    container_name: duckdb-main-demo
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    entrypoint:
+      - /duckdb
+      - outputs/nyc_taxi_demo.duckdb
+      - -cmd
+      - .read scripts/run_demo.sql
+      - -no-stdin
+
+  remote-demo:
+    image: duckdb/duckdb
+    container_name: duckdb-remote-demo
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    entrypoint:
+      - /duckdb
+      - -cmd
+      - .read scripts/remote_query.sql
+      - -no-stdin
+
+  pandas-bench:
+    build: .
+    image: duckdb-pandas-demo
+    container_name: duckdb-pandas-bench
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command:
+      - python
+      - scripts/pandas_interop.py

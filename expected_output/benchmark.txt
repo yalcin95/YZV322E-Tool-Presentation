@@ -1,0 +1,27 @@
+DuckDB version: 1.5.2
+Pandas version: 3.0.2
+Loading yellow_tripdata_2024-01.parquet into a Pandas DataFrame...
+DataFrame shape: 2,964,624 rows x 19 columns
+
+Running same GROUP BY aggregation in both engines...
+
+Pandas result:
+ payment_type   trips   total_usd   avg_usd
+            1 2298442 64528434.91 28.074859
+            2  430608  9887948.16 22.962760
+            0  117337  3062031.32 26.096042
+            4   42835    72151.55  1.684406
+            3   15031   135359.58  9.005361
+
+DuckDB result (queried directly against the Pandas DataFrame):
+ payment_type   trips    total_usd   avg_usd
+            1 2298442 6.452843e+07 28.074859
+            2  430608 9.887948e+06 22.962760
+            0  117337 3.062031e+06 26.096042
+            4   42835 7.215155e+04  1.684406
+            3   15031 1.353596e+05  9.005361
+
+Timing on identical data:
+  Pandas: 0.373 s
+  DuckDB: 0.100 s
+  Speedup: 3.7x

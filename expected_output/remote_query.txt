@@ -1,0 +1,42 @@
+Schema of remote Parquet file (no download)
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.par… │
+│                                                                              │
+│ VendorID                                                           integer   │
+│ tpep_pickup_datetime                                               timestamp │
+│ tpep_dropoff_datetime                                              timestamp │
+│ passenger_count                                                    bigint    │
+│ trip_distance                                                      double    │
+│ RatecodeID                                                         bigint    │
+│ store_and_fwd_flag                                                 varchar   │
+│ PULocationID                                                       integer   │
+│ DOLocationID                                                       integer   │
+│ payment_type                                                       bigint    │
+│ fare_amount                                                        double    │
+│ extra                                                              double    │
+│ mta_tax                                                            double    │
+│ tip_amount                                                         double    │
+│ tolls_amount                                                       double    │
+│ improvement_surcharge                                              double    │
+│ total_amount                                                       double    │
+│ congestion_surcharge                                               double    │
+│ Airport_fee                                                        double    │
+└──────────────────────────────────────────────────────────────────────────────┘
+Row count and average trip distance for February 2024
+┌─────────┬────────────────┬──────────────────┐
+│  rows   │ avg_trip_miles │ total_amount_usd │
+│  int64  │     double     │      double      │
+├─────────┼────────────────┼──────────────────┤
+│ 2901473 │           3.96 │      79037849.54 │
+└─────────┴────────────────┴──────────────────┘
+Top 5 pickup hours in February 2024 (queried remotely)
+┌─────────────┬────────┐
+│ pickup_hour │ trips  │
+│    int64    │ int64  │
+├─────────────┼────────┤
+│          18 │ 224885 │
+│          17 │ 206633 │
+│          19 │ 195857 │
+│          16 │ 185023 │
+│          15 │ 179445 │
+└─────────────┴────────┘
