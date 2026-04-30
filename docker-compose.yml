@@ -1,4 +1,5 @@
-# One-shot demo commands. Run with:
+# Compose is used as a task runner; each command starts, runs, and exits.
+# Run with:
 #   docker-compose run --rm main-demo
 #   docker-compose run --rm remote-demo
 #   docker-compose run --rm pandas-bench

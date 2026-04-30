@@ -1,5 +1,5 @@
 -- scripts/remote_query.sql
--- Query the February 2024 taxi Parquet file without downloading it first.
+-- Uses httpfs so DuckDB can query a remote Parquet file without downloading it first.
 --
 -- Run:
 --   docker-compose run --rm remote-demo

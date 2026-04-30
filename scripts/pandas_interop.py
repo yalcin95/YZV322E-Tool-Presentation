@@ -1,4 +1,4 @@
-"""Compare one Pandas GROUP BY with the same query through DuckDB.
+"""Compare a Pandas GROUP BY with DuckDB SQL on the same DataFrame.
 
 Run:
     docker-compose run --rm pandas-bench
