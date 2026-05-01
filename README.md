@@ -40,6 +40,14 @@ cd YZV322E-Tool-Presentation
 Download the NYC TLC dataset files:
 
 ```bash
+bash scripts/download_data.sh
+```
+
+That script is only a convenience wrapper around the official NYC TLC download links. It creates `data/` and downloads the two files used by the demo.
+
+Equivalent manual commands:
+
+```bash
 mkdir -p data
 curl -L -o data/yellow_tripdata_2024-01.parquet \
   https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
