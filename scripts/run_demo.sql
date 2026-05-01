@@ -78,7 +78,9 @@ FROM clean_trips;
 
 CREATE OR REPLACE TABLE payment_summary AS
 SELECT
+    -- payment_type labels come from the NYC TLC yellow taxi data dictionary.
     CASE payment_type
+        WHEN 0 THEN 'Flex Fare trip'
         WHEN 1 THEN 'Credit card'
         WHEN 2 THEN 'Cash'
         WHEN 3 THEN 'No charge'

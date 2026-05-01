@@ -13,7 +13,7 @@ Payment summary
 payment_method   trips  total_amount_usd  avg_amount_usd
    Credit card 2298380       64528576.59           28.08
           Cash  422747       10088948.58           23.87
-         Other  115249        3056745.60           26.52
+ Flex Fare trip  115249        3056745.60           26.52
        Dispute   22759         571936.35           25.13
      No charge   10562         235412.12           22.29
 

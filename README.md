@@ -175,5 +175,6 @@ AI assistance was used to draft the repository structure, README text, demo SQL,
 - DuckDB FAQ and license information: https://duckdb.org/faq.html
 - DuckDB paper: https://duckdb.org/library/duckdb/
 - NYC TLC Trip Record Data: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+- NYC TLC Yellow Taxi Trip Records Data Dictionary: https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
 - NYC TLC January 2024 Yellow Taxi Parquet: https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet
 - NYC TLC Taxi Zone Lookup CSV: https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv
