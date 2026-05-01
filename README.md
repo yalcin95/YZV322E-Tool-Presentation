@@ -24,7 +24,7 @@ You need:
 - A Unix-like shell such as macOS Terminal, Linux shell, WSL, or Git Bash
 - Internet connection for the dataset download and the remote-Parquet feature check
 
-This demo was verified on macOS with Docker Desktop. It should also work on Linux or Windows with WSL/Git Bash if Docker is running.
+This demo was verified on macOS with Docker Desktop. The commands are prepared for bash/zsh. It should also work on Linux or Windows with WSL/Git Bash if Docker is running, or the commands can be adapted for PowerShell.
 
 The demo uses the official DuckDB image (`duckdb/duckdb`). The Pandas comparison uses the small in-repo `Dockerfile`, which installs `duckdb`, `pandas`, and `pyarrow` from `requirements.txt`.
 
